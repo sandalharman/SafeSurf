@@ -24,7 +24,7 @@
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/safesurf.git
+git clone https://github.com/sandalharman/SafeSurf.git
 cd safesurf
 Install dependencies (if applicable):
 
@@ -41,19 +41,26 @@ python safesurf.py
 📁 Project Structure
 kotlin
 Copy code
-safesurf/
-├── safesurf.py
-├── filters/
-│   ├── content_filter.py
-│   └── url_blocker.py
-├── data/
-│   ├── blacklist.txt
-│   └── whitelist.txt
-├── logs/
-│   └── activity_log.txt
-├── gui/
-│   └── main_window.py
-└── README.md
+safe-surf/
+├─ docker-compose.yml          # 3‑container stack
+├─ Dockerfile                  # FastAPI + proxies
+├─ Makefile
+├─ README.md
+├─ config/
+│  ├─ policy.json              # User/group/time rules
+│  ├─ categories.csv           # Domain → category
+│  └─ threat_list.txt          # Simple IP/domain blacklist
+├─ app/
+│  ├─ main.py                  # FastAPI entry point
+│  ├─ policy.py
+│  ├─ url_categorizer.py
+│  ├─ content_analyzer.py
+│  ├─ threat_intel.py
+│  └─ decision.py
+├─ models/                     # Trained ML model (XGBoost)
+│  └─ url_classifier.pkl
+└─ tests/                      # Unit tests (optional)
+
 📚 Usage
 Launch the application and navigate the GUI or CLI.
 
@@ -85,9 +92,9 @@ Open a pull request
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 📬 Contact
-Developer: Your Name
-Email: your.email@example.com
-GitHub: @yourusername
+Developer: Harman,Jai,Aastha,Ashita,Vishesh
+Email: sandalharmann@gmail.com
+GitHub: @sandalharman
 
 Made with ❤️ in Python
 
@@ -102,3 +109,4 @@ Let me know if:
 - You’d like to generate a `requirements.txt` or add badges
 
 I'm happy to adjust it to match your actual SafeSurf project.
+
