@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  proxy:
+    build: .
+    ports:
+      - "8000:8000"      # HTTP
+      - "8443:8443"      # HTTPS (mitmproxy or nginx can forward)
+    volumes:
+      - ./config:/app/config
+      - ./models:/app/models
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
